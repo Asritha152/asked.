@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+
+# secrets: never commit these
+.env
+.env.*
+!.env.example
+pass.txt
+
+# local scratch data from the old Python version
+interviews_*.json
+models.json
+query.json

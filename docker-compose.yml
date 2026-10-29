@@ -1,0 +1,16 @@
+# Run the whole app locally at http://localhost:8080
+#   1. cp backend/.env.example backend/.env   and fill it in
+#   2. docker compose up --build
+services:
+  backend:
+    build: ./backend
+    env_file: ./backend/.env
+    environment:
+      FRONTEND_URL: http://localhost:8080
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
